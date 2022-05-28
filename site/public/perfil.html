@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!-- CABEÇALHO -->
     <div class="header">
         <div class="conteiner">
 
@@ -22,30 +23,42 @@
 
         </div>
     </div>
+
+
     <div class="banner">
+
+        <!-- MENU -->
         <div class="menu">
             <ul>
                 <div class="foto">
-                    <img src="https://static.thenounproject.com/png/1877951-200.png" alt="" height="50px">
+                    <img src="https://static.thenounproject.com/png/1877951-200.png" alt="">
                 </div>
 
-                <span class="usuario">Usuario</span>
-                <span class="usuarioEmail">usuario@email.com</span>
-                <li class="agora"> <img src="css/icone perfil.png" alt=""> <a href="#">Perfil</a></li>
-                <li> <img src="css/icone-grafico.png" alt=""> <a href="dashboard.html">Corredores</a></li>
-                <li> <img src="css/icons8-alarme-24.png" alt=""> <a href="graficos.html">Graficos</a> </li>
-                <li> <img src="css/icone-chat.png" alt=""> <a href="index.html">Sair</a></li>
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
 
+                <div class="lista-menu">
+                    <li class="agora">  <a href="perfil.html" > <img src="https://static.thenounproject.com/png/1877951-200.png" alt=""> Perfil</a></li>
+
+                    <li> <a href="dashboard.html"><img src="css/imgs/icone-loja.png" alt=""> Corredores</a></li>
+
+                    <li> <a href="graficos.html"><img src="css/imgs/icone-grafico.png" alt=""> Graficos </a> </li>
+                    <li> <img src="" alt=""> <a href="index.html">Sair</a></li>
+                </div>
             </ul>
         </div>
+
+        <!-- PERFIL -->
+
         <div class="conteiner-perfil">
+
             <div class="card">
-                <h1>Perfil</h1>
-                <p id="p_nome">Nome:</p>
-                <p id="p_email">Email:</p>
-                <p id="p_localidade">Localidades:</p>
-                <p id="p_cargo">Cargo:</p>
-                <p id="p_status">Staus:</p>
+                <!-- <h1>Perfil</h1> -->
+                <p>Nome: <span id="b_usuario"></span></p>
+                <!-- <h3>Olá, <span id="b_usuario">usuário</span>!</h3> -->
+                <p>Email:</p>
+                <p>Localidades:</p>
+                <p>Cargo:</p>
+                <!-- <p>Staus:</p> -->
             </div>
         </div>
     </div>

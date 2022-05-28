@@ -21,8 +21,6 @@
         </div>
     </div>
     <div class="banner">
-
-        <!-- MENU -->
         <div class="menu">
             <ul>
                 <div class="foto">
@@ -30,67 +28,61 @@
                 </div>
 
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-
-                <div class="lista-menu">
-                    <li>  <a href="perfil.html" > <img src="https://static.thenounproject.com/png/1877951-200.png" alt=""> Perfil</a></li>
-
-                    <li class="agora"> <a href=""><img src="css/imgs/icone-loja.png" alt=""> Corredores</a></li>
-
-                    <li> <a href="graficos.html"><img src="css/imgs/icone-grafico.png" alt=""> Graficos </a> </li>
-                    <li> <img src="" alt=""> <a href="index.html">Sair</a></li>
-                </div>
+               
+                <li> <img src="" alt=""> <a href="perfil.html">Perfil</a></li>
+                <li class="agora"> <img src="" alt=""> <a href="">Corredores</a></li>
+                <li> <img src="" alt=""> <a href="graficos.html">Graficos </a> </li>
+                <li> <a href="">Suporte</a></li>
+                <li> <img src="" alt=""> <a href="index.html">Sair</a></li>
             </ul>
         </div>
 
-
-        <!-- CARDS DO ANALYTIC -->
         <div class="conteiner-cima">
             <div class="conteiner-analytics">
                 <div class="card-vazio">
                     <h4>VAZIO</h4>
-                    <h2>0 a 4 pessoas</h2>
+                    <h2>0 pesssoas</h2>
                 </div>
                 <div class="card-emergencia">
                     <h4>Emergencia</h4>
-                    <h2>5 a 9 pessoas</h2>
+                    <h2>5 pessoas</h2>
                 </div>
                 <div class="card-alerta">
                     <h4>Alerta</h4>
-                    <h2>10 a 14 pessoas</h2>
+                    <h2>10 pessoas</h2>
                 </div>
                 <div class="card-ideal">
                     <h4>IDEAL</h4>
-                    <h2>15 a 22 pessoas</h2>
+                    <h2>14 a 20 pessoas</h2>
                 </div>
                 <div class="card-alerta-mais">
                     <h4>Alerta</h4>
-                    <h2>23 a 26 pessoas</h2>
+                    <h2>23 pessoas</h2>
                 </div>
                 <div class="card-emergencia-mais">
                     <h4>Emergencia</h4>
-                    <h2>27 a 30 pessoas</h2>
+                    <h2>27 pessoas</h2>
                 </div>
                 <div class="card-critico">
                     <h4>CRITICO</h4>
-                    <h2>Acima de 30 pessoas</h2>
+                    <h2>30 pessoas</h2>
                 </div>
 
             </div>
 
 
-            <!-- CARDS DE CADA CORREDOR -->
             <div class="cards1">
                 <div class="card">
                     <h1>Corredor 1</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_1"></p>
+                        <p id="temp_aquario_1">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_1"></div>
                 </div>
                 <div class="card">
                     <h1>Corredor 2</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_2"></p>
+                        <p id="temp_aquario_2">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_2"></div>
 
@@ -101,14 +93,14 @@
                 <div class="card">
                     <h1>Corredor 3</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_3"></p>
+                        <p id="temp_aquario_3">-°C</p>
                     </div>
-                    <div class="cor-alerta" id="card_3"></div>
+                    <div class="cor-alerta ideal" id="card_3"></div>
                 </div>
                 <div class="card">
                     <h1>Corredor 4</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_4"></p>
+                        <p id="temp_aquario_4">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_4"></div>
                 </div>
@@ -119,6 +111,9 @@
         </div>
 
     </div>
+
+
+
 
 
     <!-- RODAPE -->
@@ -192,10 +187,10 @@
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
                         var dados = {
-                            chave: resposta[0].chave,
+                            temperatura: resposta[0].temperatura,
                         }
 
-                        alertar(resposta[0].chave, idAquario);
+                        alertar(resposta[0].temperatura, idAquario);
                     });
                 } else {
 
@@ -208,66 +203,56 @@
 
     }
 
-    function alertar(chave, idAquario) {
+    function alertar(temperatura, idAquario) {
         var limites = {
-            critico: 30,
-            emergencia: 27,
-            alerta: 23,
-            ideal: 15,
-            alerta_vazio: 10,
-            emergencia_vazio: 5,
-            vazio: 0
+            muito_quente: 23,
+            quente: 22,
+            ideal: 20,
+            frio: 10,
+            muito_frio: 5
         };
 
-        var classe_chave = 'cor-alerta';
+        var classe_temperatura = 'cor-alerta';
 
-        if (chave >= limites.critico) {
-            classe_chave = 'cor-alerta perigo-critico';
+        if (temperatura >= limites.muito_quente) {
+            classe_temperatura = 'cor-alerta perigo-quente';
             console.log("caiu no 1")
         }
-        else if (chave < limites.critico && chave >= limites.emergencia) {
-            classe_chave = 'cor-alerta alerta-emergencia';
+        else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
+            classe_temperatura = 'cor-alerta alerta-quente';
             console.log("caiu no 2")
         }
-        else if (chave < limites.emergencia && chave >= limites.alerta) {
-            classe_chave = 'cor-alerta alerta-alerta';
+        else if (temperatura < limites.quente && temperatura > limites.frio) {
+            classe_temperatura = 'cor-alerta ideal';
             console.log("caiu no 3")
         }
-        else if (chave < limites.alerta && chave >= limites.ideal) {
-            classe_chave = 'cor-alerta alerta-ideal';
+        else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
+            classe_temperatura = 'cor-alerta alerta-frio';
             console.log("caiu no 4")
         }
-        else if (chave < limites.ideal && chave >= limites.alerta_vazio) {
-            classe_chave = 'cor-alerta alerta-alerta_vazio';
-            console.log("caiu no 6")
-        }
-        else if (chave < limites.alerta_vazio && chave >= limites.emergencia_vazio) {
-            classe_chave = 'cor-alerta alerta-emergencia_vazio';
-            console.log("caiu no 7")
-        }
-        else if (chave < limites.emergencia_vazio) {
-            classe_chave = 'cor-alerta alerta-vazio';
-            console.log("caiu no 8")
+        else if (temperatura < limites.min_temperatura) {
+            classe_temperatura = 'cor-alerta perigo-frio';
+            console.log("caiu no 5")
         }
 
         var card;
 
         if (idAquario == 1) {
-            temp_aquario_1.innerHTML = chave + ` pessoas no último minuto`;
+            temp_aquario_1.innerHTML = temperatura + "°C";
             card = card_1
         } else if (idAquario == 2) {
-            temp_aquario_2.innerHTML = chave + ` pessoas no último minuto`;
+            temp_aquario_2.innerHTML = temperatura + "°C";
             card = card_2
         } else if (idAquario == 3) {
-            temp_aquario_3.innerHTML = chave + ` pessoas no último minuto`;
+            temp_aquario_3.innerHTML = temperatura + "°C";
             card = card_3
         } else if (idAquario == 4) {
-            temp_aquario_4.innerHTML = chave + ` pessoas no último minuto`;
+            temp_aquario_4.innerHTML = temperatura + "°C";
             card = card_4
         }
 
         // alterando
-        card.className = classe_chave;
+        card.className = classe_temperatura;
 
     }
 
