@@ -1,0 +1,402 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(228, 168, 56);
+}
+
+/* BARRA DE ROLAR */
+body::-webkit-scrollbar {
+    width: 1.5vw;
+}
+
+body::-webkit-scrollbar-track {
+    background: orange;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 1.5vw;
+    border: 0.5vh solid orange;
+}
+
+/* ============================ */
+
+/* HEADER */
+.header {
+    background-color: rgb(0, 0, 0);
+    height: 15vh;
+}
+.header img{
+    height: 13vh;
+}
+.conteiner {
+    color: rgb(243, 166, 22);
+    display: flex;
+    justify-content: space-between;
+    margin-left: 70px;
+}
+.conteiner h1{
+font-size: 5vh;
+}
+.conteiner .home {
+    width: 300px;
+    background-color: none;
+}
+.conteiner img{
+    height: 14vh;
+}
+.logo {
+    margin-right: 20px;
+
+}
+
+.conteiner ul {
+    display: flex;
+    width: 700px;
+    justify-content: space-evenly;
+    list-style: none;
+    margin-left: 150px;
+    font-size: 17px;
+}
+
+.conteiner ul a {
+    text-decoration: none;
+    color: rgb(243, 166, 22);
+    font-size: 4vh;
+}
+
+li a:hover {
+    opacity: .80;
+}
+
+.header .conteiner {
+    justify-content: center;
+    align-items: center;
+}
+
+.agora {
+    font-weight: 600;
+}
+
+/* FUNDO */
+.banner {
+    height: 120vh;
+    background-image: url("imgs/fundo-site.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+/* MENU */
+.menu {
+    background-color: white;
+    width: 18vw;
+    border: 1vh solid;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+}
+
+.menu li {
+    color: black;
+    font-size: 4vh;
+    margin-top: 7vh;
+    list-style: none;
+    text-decoration: none;
+}
+
+.menu li a {
+    color: black;
+    text-decoration: none;
+    margin-top: -15vh;
+}
+
+.menu li img {
+    height: 5vh;
+    margin-top: 1vh;
+}
+.menu ul{
+    padding: 2vw;
+    margin-top: -25vh;
+    margin-right: 1.5vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.menu ul .usuario {
+    font-size: 6.5vh;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    margin-left: 1.5vh;
+}
+
+.menu ul .usuarioEmail {
+    font-size: 3vh;
+    
+    margin: 0;
+    margin-right: 4vh;
+}
+
+.foto {
+    width: 3.8vw;
+    padding: 0.5vw;
+    display: flex;
+    justify-content: center;
+    border-radius: 10vh;
+    margin-left: 2vw;
+    margin-left: 7.5vh;
+    
+
+    
+}
+
+.foto img{
+    height: 8.5vh;
+    
+}
+li a:hover {
+    opacity: .100;
+}
+
+/* DASHBOARD - Graficos */
+
+.conteiner-conteudo{
+    display: flex;
+    flex-direction: column;
+}
+
+.conteiner-escolha{
+    display: flex;
+    flex-direction: row;
+    height: 20vh;
+}
+
+.titulos{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.titulos h1{
+    display: flex;
+    flex-direction: row;
+    margin-left: 6vw;
+    font-size: 5vh;
+    
+}
+h1 a{
+    text-decoration: none;
+    color: white;
+}
+
+#graf_linha {
+    position: relative;
+    height: 25vh;
+    width: 25vw;
+    font-size: 3vh;
+}
+
+#graf_barra {
+    position: relative;
+    height: 25vh;
+    width: 25vw;
+    font-size: 3vh;
+}
+
+#graf_montanha{
+    position: relative;
+    height: 25vh;
+    width: 25vw;
+    font-size: 3vh;
+}
+
+.banner .container_graf {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 8vh;
+}
+
+.card_graf_barra {
+    height:30vh;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20vw;
+   
+    border: 0.5vh black solid;
+    border-radius: 3vh;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    /* position: absolute; */
+    background-color: white;
+    padding: 4vh 1vw;
+}
+
+.card_graf_linha {
+    height: 30vh;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20vw;
+   
+    border: 0.5vh black solid;
+    border-radius: 3vh;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    /* position: absolute; */
+    background-color: white;
+    padding: 4vh 1vw;
+}
+
+.card_graf_montanha {
+    color: black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20vw;
+    height: 30vh;
+    padding: 4vh 1vw;
+   
+    border: 0.5vh black solid;
+    border-radius: 3vh;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    /* position: absolute; */
+    background-color: white;
+}
+
+/* Analytics - Corredores*/
+.conteiner-cima {
+    display: flex;
+    margin-top: 5vh;
+    flex-direction: column;
+
+}
+
+.conteiner-analytics {
+    display: flex;
+    flex-direction: row;
+    font-size: 2vh;
+    justify-content: center;
+    margin-left: 5vw;
+
+}
+
+.card-vazio {
+    height: 15vh;
+    width: 8vw;
+    background-color: rgb(7, 7, 255);
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+}
+
+.card-emergencia {
+    height: 15vh;
+    width: 8vw;
+    background-color: rgb(78, 109, 223);
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+}
+
+.card-alerta {
+    height: 15vh;
+    width: 8vw;
+    background-color: rgb(133, 186, 255);
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+}
+
+.card-ideal {
+    height: 15vh;
+    width: 8vw;
+    background-color: rgb(110, 255, 112);
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+}
+
+.card-alerta-mais {
+    height: 15vh;
+    width: 8vw;
+    background-color: rgb(255, 249, 76);
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+}
+
+.card-emergencia-mais {
+    height: 15vh;
+    width: 8vw;
+    background-color: rgb(255, 136, 0);
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+}
+
+.card-critico {
+    height: 15vh;
+    width: 8vw;
+    background-color: red;
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+}
+
+/* Caixas de cada corredor  Corredores */
+.conteiner-caixas {
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.conteiner-cards1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.conteiner-cards2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+}
+
+.card-corredor {
+    margin-top: 1vh;
+    background-color: rgb(212, 209, 209);
+    height: 30vh;
+    width: 20vw;
+    /* border: 0.5vh solid black;
+    border-bottom-left-radius: 8vh;
+    border-top-left-radius: 2vh;
+    border-bottom-right-radius: 2vh;
+    border-top-right-radius: 2vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.card-corredor p{
+    margin-bottom: 1vh;
+    margin-top: -15vh;
+    font-size: 6vh;
+}
+.linha{
+    height: 0.2vh;
+    width: 20vw;
+    background-color: black;
+    
+}
+
+

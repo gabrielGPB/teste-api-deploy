@@ -1,2 +1,2 @@
-# teste-api-deploy
-teste do site para realizar o deploy
+# MoveSport-Sprint3
+Sprint 3 da Equipe da Move Sport
